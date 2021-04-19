@@ -20,6 +20,21 @@ public class Main {
         return result;
     }
 
+    public static double calculateEmployeeSalary(double hoursWorked,
+                                                 double moneyPerHour,
+                                                 double vacationDays) {
+        if (hoursWorked < 0) {
+            return -1;
+        }
+        else if (moneyPerHour < 0) {
+            return -1;
+        }
+
+        double vacationHours = vacationDays * 8;
+        double finalHours = hoursWorked * 52 - vacationHours;
+        double result = finalHours * moneyPerHour;
+        return result;
+    }
     public static void main(String[] args) {
 //        int studentAge = 15;
 //        double studentGPA = 3.45;
@@ -113,10 +128,34 @@ public class Main {
 //        System.out.println("Get promoted!");
 //        calculateTotalMealPrice(15, .2, .08);
 //        calculateTotalMealPrice(25, .18, .08);
-        double groupTotalMealPrice = calculateTotalMealPrice(100, .2, .08);
-        System.out.println(groupTotalMealPrice);
+//        double groupTotalMealPrice = calculateTotalMealPrice(100, .2, .08);
+//        System.out.println(groupTotalMealPrice);
+//
+//        double individualTotalMealPrice = groupTotalMealPrice / 5;
+//        System.out.println(individualTotalMealPrice);
+//        double result = Math.pow(2, 5);
+//        System.out.println(result);
 
-        double individualTotalMealPrice = groupTotalMealPrice / 5;
-        System.out.println(individualTotalMealPrice);
+//        System.out.println(calculateEmployeeSalary(40.0, 60.0, 14));
+
+//        Triangle triangleA = new Triangle(15, 8, 15, 8, 17);
+//        Triangle triangleB = new Triangle(3, 2.598, 3, 3, 3);
+//
+//
+//        double triangleAArea = triangleA.findArea();
+//        System.out.println(triangleAArea);
+//
+//        double triangleBArea = triangleB.findArea();
+//        System.out.println(triangleBArea);
+
+//        System.out.println(triangleA.sideLenThree);
+//        System.out.println(triangleB.base);
+//        System.out.println(Triangle.numOfSides);
+        Student studentA = new Student("Monica", "Larkinson", 2022, 3.75, "Psychology");
+        Student studentB = new Student("Jean", "Mills", 2022, 1.75, "Biology");
+        System.out.println(studentB.expectedGraduationYear);
+        studentB.incrementExpectedGraduationYear();
+        System.out.println(studentB.expectedGraduationYear);
+
     }
 }
